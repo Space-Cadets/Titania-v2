@@ -1,6 +1,7 @@
 // @flow
 import request from 'superagent'
 import LoginConstants from '../constants/LoginConstants.js'
+import { navigateToDashboard } from '../actions/SharedActions.js'
 
 export const signupSuccess = () => ({
   type: LoginConstants.SIGNUP_SUCCESS,
@@ -29,7 +30,8 @@ export const signupUser = (
     })
     .end((err: Object, res: Object) => {
       if (res.statusCode === 200) {
-        return dispatch(signupSuccess())
+        dispatch(signupSuccess())
+        return dispatch(navigateToDashboard())
       }
       return dispatch(signupFailure())
     })
