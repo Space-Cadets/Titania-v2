@@ -1,0 +1,51 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "semi": [ 2, "never" ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-boolean-value": 0,
+    "flowtype/define-flow-type": 1,
+    "flowtype/require-parameter-type": 1,
+    "flowtype/require-return-type": [
+        2,
+        "always",
+        {
+          "excludeArrowFunctions": true,
+          "annotateUndefined": "never"
+        }
+    ],
+    "flowtype/space-after-type-colon": [
+        1,
+        "always"
+    ],
+    "flowtype/space-before-type-colon": [
+        1,
+        "never"
+    ],
+    "flowtype/type-id-match": [
+        1,
+        "^([A-Z][a-z0-9]+)+Type$"
+    ],
+    "flowtype/use-flow-type": 1,
+    "flowtype/valid-syntax": 1
+  },
+  "settings": {
+    "flowtype": {
+        "onlyFilesWithFlowAnnotation": true
+    }
+  },
+  "plugins": [
+    "babel",
+    "react",
+    "flowtype"
+  ]
+}

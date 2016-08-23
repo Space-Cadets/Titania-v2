@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
+import Header from './shared/Header.react.js'
 
-const Home = () => {
-  return (
-    <div>Home Page (Placeholder for now)</div>
-  );
-};
+const Home = () => (
+  <div>
+    <Header />
+  </div>
+)
 
-export default Home;
+export default Home
