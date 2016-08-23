@@ -5,7 +5,7 @@ import SignupContainer from '../../containers/SignupContainer.react.js'
 const Signup = () => (
   <div>
     <Header />
-    <div className={'contentContainer'}>
+    <div className="contentContainer">
       <SignupContainer />
     </div>
   </div>

@@ -37,7 +37,7 @@ const SignupForm = (props: Object) => {
   /* eslint-enable */
 
   return (
-    <Paper zDepth={1} id={'signupForm'}>
+    <Paper zDepth={1} className="signupForm">
       <h2 id={'signupText'}>Signup</h2>
       <TextField
         {...domOnlyProps(firstName)}
@@ -61,7 +61,7 @@ const SignupForm = (props: Object) => {
         fullWidth={true}
       />
       <RaisedButton
-        className={'signupButton'}
+        className="signupButton"
         label="Create Account"
         primary={true}
         onClick={() => {
