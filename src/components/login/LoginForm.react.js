@@ -5,18 +5,18 @@ import Paper from 'material-ui/Paper'
 import RaisedButton from 'material-ui/RaisedButton'
 import { reduxForm } from 'redux-form'
 
-const SignupForm = (props: Object) => {
+const LoginForm = (props: Object) => {
   const {
     fields: {
-      firstName,
-      lastName,
-      password,
       email,
+      password,
     },
-    signupSubmit,
+    loginSubmit,
+    navigateToSignup,
   }: {
     fields: Object,
-    signupSubmit: Function,
+    loginSubmit: Function,
+    navigateToSignup: Function,
   } = props
 
   /* eslint-disable */
@@ -37,17 +37,7 @@ const SignupForm = (props: Object) => {
 
   return (
     <Paper zDepth={1} className="form">
-      <h2 id={'signupText'}>Signup</h2>
-      <TextField
-        {...domOnlyProps(firstName)}
-        floatingLabelText="First Name"
-        fullWidth={true}
-      />
-      <TextField
-        {...domOnlyProps(lastName)}
-        floatingLabelText="Last Name"
-        fullWidth={true}
-      />
+      <h2 id={'formText'}>Login</h2>
       <TextField
         {...domOnlyProps(email)}
         floatingLabelText="Email"
@@ -59,24 +49,33 @@ const SignupForm = (props: Object) => {
         type="password"
         fullWidth={true}
       />
-      <RaisedButton
-        className="formButton"
-        label="Create Account"
-        primary={true}
-        onClick={() => {
-          signupSubmit(
-            firstName.value,
-            lastName.value,
-            email.value,
-            password.value,
-          ) }
-        }
-      />
+      <span>
+        <RaisedButton
+          className="formButton"
+          label="Login"
+          primary={true}
+          onClick={() => {
+            loginSubmit(
+              email.value,
+              password.value,
+            ) }
+          }
+        />
+        <RaisedButton
+          className="formButton"
+          label="Sign Up"
+          primary={true}
+          onClick={() => {
+            navigateToSignup()
+          }}
+        />
+      </span>
+
     </Paper>
   )
 }
 
 export default reduxForm({
-  form: 'signup',
-  fields: ['firstName', 'lastName', 'password', 'email'],
-})(SignupForm)
+  form: 'Login',
+  fields: ['email', 'password'],
+})(LoginForm)
