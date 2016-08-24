@@ -25,5 +25,6 @@ apm install nuclide
 brew update
 brew install watchman
 brew install flow
+apm install linter-eslint
 apm disable linter
 ```
