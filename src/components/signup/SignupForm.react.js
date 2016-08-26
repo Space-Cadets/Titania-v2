@@ -1,9 +1,9 @@
 // @flow
 import React from 'react'
-import TextField from 'material-ui/TextField'
-import Paper from 'material-ui/Paper'
-import RaisedButton from 'material-ui/RaisedButton'
 import { reduxForm } from 'redux-form'
+import Paper from 'material-ui/Paper'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const SignupForm = (props: Object) => {
   const {
@@ -14,9 +14,11 @@ const SignupForm = (props: Object) => {
       email,
     },
     signupSubmit,
+    navigateToLogin,
   }: {
     fields: Object,
     signupSubmit: Function,
+    navigateToLogin: Function,
   } = props
 
   /* eslint-disable */
@@ -33,11 +35,11 @@ const SignupForm = (props: Object) => {
     visited,
     autofilled,
   ...domProps }) => domProps;
-  /* eslint-enable */
 
+  /* eslint-enable */
   return (
     <Paper zDepth={1} className="form">
-      <h2 id={'signupText'}>Signup</h2>
+      <h2 id={'signupText'}>Sign Up</h2>
       <TextField
         {...domOnlyProps(firstName)}
         floatingLabelText="First Name"
@@ -59,19 +61,28 @@ const SignupForm = (props: Object) => {
         type="password"
         fullWidth={true}
       />
-      <RaisedButton
-        className="formButton"
-        label="Create Account"
-        primary={true}
-        onClick={() => {
-          signupSubmit(
-            firstName.value,
-            lastName.value,
-            email.value,
-            password.value,
-          ) }
-        }
-      />
+      <span>
+        <RaisedButton
+          className="formButton"
+          label="Sign Up"
+          primary={true}
+          onClick={() => {
+            signupSubmit(
+              firstName.value,
+              lastName.value,
+              email.value,
+              password.value,
+            ) }
+          }
+        />
+        <RaisedButton
+          className="formButton"
+          label="Login"
+          onClick={() => {
+            navigateToLogin()
+          }}
+        />
+      </span>
     </Paper>
   )
 }
