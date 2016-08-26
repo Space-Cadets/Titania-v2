@@ -37,7 +37,7 @@ const LoginForm = (props: Object) => {
 
   return (
     <Paper zDepth={1} className="form">
-      <h2 id={'formText'}>Log In</h2>
+      <h2 id={'formText'}>Login</h2>
       <TextField
         {...domOnlyProps(email)}
         floatingLabelText="Email"
@@ -52,7 +52,7 @@ const LoginForm = (props: Object) => {
       <span>
         <RaisedButton
           className="formButton"
-          label="Log In"
+          label="Login"
           primary={true}
           onClick={() => {
             loginSubmit(

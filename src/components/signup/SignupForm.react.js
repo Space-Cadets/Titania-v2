@@ -77,7 +77,7 @@ const SignupForm = (props: Object) => {
         />
         <RaisedButton
           className="formButton"
-          label="Log In"
+          label="Login"
           onClick={() => {
             navigateToLogin()
           }}
