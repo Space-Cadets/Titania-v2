@@ -64,6 +64,7 @@ const LoginForm = (props: Object) => {
         <RaisedButton
           className="formButton"
           label="Sign Up"
+          primary={true}
           onClick={() => {
             navigateToSignup()
           }}
