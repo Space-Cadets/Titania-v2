@@ -4,6 +4,7 @@ import { reduxForm } from 'redux-form'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
+import { domOnlyProps } from '../../Utils.js'
 
 const SignupForm = (props: Object) => {
   const {
@@ -21,22 +22,6 @@ const SignupForm = (props: Object) => {
     navigateToLogin: Function,
   } = props
 
-  /* eslint-disable */
-  const domOnlyProps = ({
-    initialValue,
-    autofill,
-    onUpdate,
-    valid,
-    invalid,
-    dirty,
-    pristine,
-    active,
-    touched,
-    visited,
-    autofilled,
-  ...domProps }) => domProps;
-
-  /* eslint-enable */
   return (
     <Paper zDepth={1} className="form">
       <h2 id={'signupText'}>Sign Up</h2>
